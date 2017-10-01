@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_nodata"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    android:background="@null"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_nodata_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:paddingLeft="16dip"
+        android:paddingRight="16dip"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="14sp"
+        tools:text="菜单是空的" />
+</RelativeLayout>
