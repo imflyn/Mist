@@ -2,6 +2,8 @@ package flyn.mist
 
 import android.app.Application
 import android.content.Context
+import android.os.Handler
+import android.os.Looper
 import android.support.multidex.MultiDex
 import com.bumptech.glide.Glide
 import com.bumptech.glide.MemoryCategory
@@ -9,13 +11,20 @@ import com.bumptech.glide.MemoryCategory
 
 class MistApplication : Application() {
 
-    private lateinit var mContext: MistApplication
-    val appContext: MistApplication
-        get() = mContext
+
+    private var mHandler: Handler? = null
+    val handler: Handler
+        get() {
+            if (mHandler == null) {
+                mHandler = Handler(Looper.getMainLooper())
+            }
+            return mHandler as Handler
+        }
+
 
     override fun onCreate() {
         super.onCreate()
-        mContext = this
+        appContext = this
         Glide.get(this).setMemoryCategory(MemoryCategory.HIGH)
     }
 
@@ -35,4 +44,8 @@ class MistApplication : Application() {
         MultiDex.install(this)
     }
 
+    companion object {
+        lateinit var appContext: MistApplication
+            private set
+    }
 }

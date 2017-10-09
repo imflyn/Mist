@@ -9,7 +9,7 @@ class ActivityHelper private constructor() {
     private var mActivityStack: Stack<Activity>? = null
     private var currentActivity: BaseActivity? = null
 
-    val activityStack: Stack<Activity>
+    private val activityStack: Stack<Activity>
         get() {
             if (mActivityStack == null) {
                 mActivityStack = Stack()

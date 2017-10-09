@@ -20,7 +20,8 @@ import android.widget.FrameLayout;
 
 import java.lang.reflect.Field;
 
-import flyn.eyes.library.R;
+import flyn.mist.R;
+
 
 @TargetApi(Build.VERSION_CODES.KITKAT)
 class EyesKitKat {
@@ -52,7 +53,7 @@ class EyesKitKat {
         int action_bar_id = activity.getResources().getIdentifier("action_bar", "id", activity.getPackageName());
         View view = activity.findViewById(action_bar_id);
         if (view != null) {
-           TypedValue typedValue = new TypedValue();
+            TypedValue typedValue = new TypedValue();
             if (activity.getTheme().resolveAttribute(R.attr.actionBarSize, typedValue, true)) {
                 int actionBarHeight = TypedValue.complexToDimensionPixelSize(typedValue.data, activity.getResources().getDisplayMetrics());
                 Eyes.setContentTopPadding(activity, actionBarHeight);
