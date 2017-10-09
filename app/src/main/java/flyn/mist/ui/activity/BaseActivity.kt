@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import flyn.mist.helper.ActivityHelper
 import flyn.mist.helper.UIHelper
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 abstract class BaseActivity : AppCompatActivity() {
@@ -25,6 +26,9 @@ abstract class BaseActivity : AppCompatActivity() {
 
         val view: View = mInflater.inflate(getLayoutId(), null, false)
         setContentView(view)
+        toolbar?.let {
+            setSupportActionBar(toolbar)
+        }
         initView()
         setListener()
         initData()

@@ -13,6 +13,54 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
+    <style name="AppTheme.NoTitleBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionBarStyle">@style/AppTheme.ActionBar</item>
+        <item name="actionBarStyle">@style/AppTheme.ActionBar</item>
+        <item name="actionMenuTextAppearance">@style/AppTheme.ActionBarMenuTextStyle</item>
+        <item name="android:actionMenuTextAppearance">@style/AppTheme.ActionBarMenuTextStyle</item>
+        <item name="toolbarStyle">@style/AppTheme.ToolbarStyle</item>
+        <item name="android:toolbarStyle">@style/AppTheme.ToolbarStyle</item>
+    </style>
+
+    <style name="AppTheme.ActionBar" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="background">@android:color/white</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="titleTextStyle">@style/AppTheme.ActionBarTitleTextStyle</item>
+        <item name="android:titleTextStyle">@style/AppTheme.ActionBarTitleTextStyle</item>
+        <item name="elevation">1dp</item>
+        <item name="android:elevation">1dp</item>
+    </style>
+
+    <style name="AppTheme.ToolbarStyle" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="titleTextAppearance">@style/AppTheme.ToolbarTitleTextStyle</item>
+        <item name="android:titleTextAppearance">@style/AppTheme.ToolbarTitleTextStyle</item>
+        <item name="elevation">1dp</item>
+        <item name="android:elevation">1dp</item>
+    </style>
+
+    <style name="AppTheme.ActionBarMenuTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="AppTheme.ActionBarTitleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="AppTheme.ToolbarTitleTextStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
     <style name="ProgressDialog" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowFrame">@null</item>
