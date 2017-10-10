@@ -9,7 +9,6 @@ import android.support.v4.app.ActivityOptionsCompat
 import android.view.animation.AccelerateDecelerateInterpolator
 import flyn.mist.R
 import flyn.mist.helper.statusbar.Eyes
-import flyn.mist.util.ViewUtils
 import kotlinx.android.synthetic.main.activty_splash.*
 
 class SplashActivity : BaseActivity() {
@@ -31,7 +30,7 @@ class SplashActivity : BaseActivity() {
             tv_title.animate()
                     .scaleX(.37F)
                     .scaleY(.37F)
-                    .translationY(-ViewUtils.getDeviceWidth().div(2).toFloat() - ViewUtils.getPxFromDp(54F + 30F))
+                    .translationY(tv_holder.y - tv_title.y)
                     .setDuration(500)
                     .setInterpolator(AccelerateDecelerateInterpolator())
                     .setListener(object : AnimatorListenerAdapter() {
