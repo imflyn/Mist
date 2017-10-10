@@ -20,8 +20,7 @@ class SplashActivity : BaseActivity() {
     override fun initView() {
         Eyes.translucentStatusBar(this, true)
 
-        val typeFace: Typeface = Typeface.createFromAsset(assets, "fonts/GistRough.otf");
-        tv_title.typeface = typeFace;
+        tv_title.typeface = Typeface.createFromAsset(assets, "fonts/GistRough.otf")
 
         tv_title.animate().alpha(1f).setDuration(1000).start()
         rootView.animate().alpha(1f).setDuration(1000).start()
@@ -42,7 +41,6 @@ class SplashActivity : BaseActivity() {
                         }
                     })
                     .start()
-
         }, 1500)
     }
 

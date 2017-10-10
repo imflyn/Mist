@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="flyn.mist">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MistApplication"
         android:allowBackup="true"
