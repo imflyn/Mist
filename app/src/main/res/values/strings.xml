@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Mist</string>
+
+    <!-- 侧拉栏 -->
+    <string name="settings">设置</string>
+    <string name="theme_color">主题色</string>
+    <string name="time_to_stop">定时停止播放</string>
+    <string name="time_stop">定时停止播放</string>
+    <string name="feedback">反馈</string>
+    <string name="about">关于</string>
+
+
 </resources>

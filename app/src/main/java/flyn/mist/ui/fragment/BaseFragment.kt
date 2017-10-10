@@ -14,11 +14,11 @@ import flyn.mist.helper.UIHelper
 
 abstract class BaseFragment : Fragment() {
 
-    lateinit var uiHelper: UIHelper;
-    lateinit var mContext: Activity;
-    lateinit var mInflater: LayoutInflater;
-    lateinit var mHandler: Handler;
-    lateinit var mRootView: View;
+    lateinit var uiHelper: UIHelper
+    lateinit var mContext: Activity
+    lateinit var mInflater: LayoutInflater
+    lateinit var mHandler: Handler
+    lateinit var mRootView: View
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         if (getLayoutId() > 0) {
@@ -37,7 +37,7 @@ abstract class BaseFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mContext = activity;
+        mContext = activity
         uiHelper = UIHelper.attachToActivity(activity)
         mInflater = LayoutInflater.from(activity)
         mHandler = MistApplication.appContext.handler

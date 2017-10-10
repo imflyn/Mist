@@ -61,7 +61,6 @@
     </LinearLayout>
 
     <!--侧滑菜单-->
-    
     <fragment
         android:id="@+id/fragment_leftmenu"
         class="flyn.mist.ui.fragment.LeftMenuFragment"
