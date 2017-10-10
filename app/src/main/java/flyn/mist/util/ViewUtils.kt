@@ -1,9 +1,14 @@
 package flyn.mist.util
 
 import android.app.Activity
+import android.content.Context
+import android.graphics.Point
 import android.util.SparseArray
+import android.util.TypedValue
 import android.view.View
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
+import flyn.mist.MistApplication
 
 object ViewUtils {
 
@@ -44,6 +49,24 @@ object ViewUtils {
     fun showKeyBoard(view: View) {
         val imm = view.context.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.showSoftInput(view, 0)
+    }
+
+    fun getPxFromDp(dp: Float): Int {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, MistApplication.appContext.resources.displayMetrics).toInt()
+    }
+
+    fun getDeviceWidth(): Int {
+        val wm = MistApplication.appContext.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val size = Point()
+        wm.defaultDisplay.getSize(size)
+        return size.x
+    }
+
+    fun getDeviceHeight(): Int {
+        val wm = MistApplication.appContext.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val size = Point()
+        wm.defaultDisplay.getSize(size)
+        return size.y
     }
 
 }

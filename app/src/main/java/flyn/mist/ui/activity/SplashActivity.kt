@@ -6,9 +6,10 @@ import android.content.Intent
 import android.graphics.Typeface
 import android.support.v4.app.ActivityCompat
 import android.support.v4.app.ActivityOptionsCompat
-import flyn.mist.MistApplication
+import android.view.animation.AccelerateDecelerateInterpolator
 import flyn.mist.R
 import flyn.mist.helper.statusbar.Eyes
+import flyn.mist.util.ViewUtils
 import kotlinx.android.synthetic.main.activty_splash.*
 
 class SplashActivity : BaseActivity() {
@@ -24,16 +25,25 @@ class SplashActivity : BaseActivity() {
         tv_title.typeface = typeFace;
 
         tv_title.animate().alpha(1f).setDuration(1000).start()
-        ll_content.animate().alpha(1f).setDuration(1000).start()
+        rootView.animate().alpha(1f).setDuration(1000).start()
 
-        MistApplication.appContext.handler.postDelayed({
-            tv_title.animate().alpha(.5f).setDuration(1000).setListener(object : AnimatorListenerAdapter() {
-                override fun onAnimationEnd(animation: Animator?) {
-                    val options = ActivityOptionsCompat.makeSceneTransitionAnimation(mContext, tv_title, "tv_title")
-                    ActivityCompat.startActivity(mContext, Intent(mContext, MainActivity::class.java), options.toBundle())
-                    finish()
-                }
-            }).start()
+        mHandler.postDelayed({
+            tv_title.animate()
+                    .scaleX(.37F)
+                    .scaleY(.37F)
+                    .translationY(-ViewUtils.getDeviceWidth().div(2).toFloat() - ViewUtils.getPxFromDp(54F + 30F))
+                    .setDuration(500)
+                    .setInterpolator(AccelerateDecelerateInterpolator())
+                    .setListener(object : AnimatorListenerAdapter() {
+
+                        override fun onAnimationEnd(animation: Animator?) {
+                            val options = ActivityOptionsCompat.makeCustomAnimation(mContext, R.anim.fadein, R.anim.fadeout)
+                            ActivityCompat.startActivity(mContext, Intent(mContext, MainActivity::class.java), options.toBundle())
+                            finish()
+                        }
+                    })
+                    .start()
+
         }, 1500)
     }
 

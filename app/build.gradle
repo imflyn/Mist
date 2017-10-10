@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+
 android {
     compileSdkVersion 26
     buildToolsVersion '26.0.2'
@@ -68,5 +69,7 @@ dependencies {
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
     //https://github.com/bumptech/glide
     implementation 'com.github.bumptech.glide:glide:4.1.1'
+    //https://github.com/andkulikov/Transitions-Everywhere
+    implementation "com.andkulikov:transitionseverywhere:1.7.6"
 }
 
