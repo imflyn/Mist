@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -24,22 +25,27 @@ android {
     }
 }
 
-ext {
-    android_support_version = '26.1.0'
-    arch_component_version = '1.0.0-alpha9-1'
-}
+
 
 
 repositories {
     mavenCentral()
 }
 
+ext {
+    android_support_version = '26.1.0'
+    arch_component_version = '1.0.0-alpha9-1'
+    runnerVersion = '1.0.1'
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.1', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+    // Dependencies for Android unit tests
+    androidTestImplementation "junit:junit:4.12"
+    // Espresso UI Testing
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:3.0.1"
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
     // Architecture components
@@ -72,6 +78,8 @@ dependencies {
     //https://github.com/andkulikov/Transitions-Everywhere
     implementation "com.andkulikov:transitionseverywhere:1.7.6"
     //https://github.com/f2prateek/rx-preferences
-    compile 'com.f2prateek.rx.preferences2:rx-preferences:2.0.0-RC3'
+    implementation 'com.f2prateek.rx.preferences2:rx-preferences:2.0.0-RC3'
+
+
 }
 

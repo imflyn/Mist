@@ -6,6 +6,7 @@ import flyn.mist.ui.view.ICurrentMusicView
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import java.lang.IllegalStateException
 
 class CurrentMusicPresenter(iView: ICurrentMusicView) : IPresenter<ICurrentMusicView>(iView) {
 
@@ -15,7 +16,7 @@ class CurrentMusicPresenter(iView: ICurrentMusicView) : IPresenter<ICurrentMusic
                 Observable.create<Music> { source ->
                     val music = MusicService.getInstance().getCurrentMusic()
                     if (music == null) {
-                        source.onError(RuntimeException("No current music "))
+                        source.onError(IllegalStateException("No current music "))
                     } else {
                         source.onNext(music)
                         source.onComplete()

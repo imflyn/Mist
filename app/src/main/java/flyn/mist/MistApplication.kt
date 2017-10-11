@@ -26,6 +26,7 @@ class MistApplication : Application() {
         super.onCreate()
         appContext = this
         Glide.get(this).setMemoryCategory(MemoryCategory.HIGH)
+
     }
 
 

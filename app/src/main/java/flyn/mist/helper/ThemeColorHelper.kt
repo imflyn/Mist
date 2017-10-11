@@ -1,5 +1,6 @@
 package flyn.mist.helper
 
+import android.support.annotation.VisibleForTesting
 import android.support.v4.content.ContextCompat
 import flyn.mist.MistApplication
 import flyn.mist.R
@@ -14,7 +15,9 @@ class ThemeColorHelper private constructor() {
         SharedPreferencesHelper().rxPreferences.getInteger(THEME_COLOR)
                 .asObservable()
                 .subscribe({ color ->
-                    themeColor = ContextCompat.getColor(MistApplication.appContext, color)
+                    themeColor = color
+                }, {
+                    themeColor = ContextCompat.getColor(MistApplication.appContext, R.color.colorAccent)
                 })
     }
 
@@ -22,6 +25,11 @@ class ThemeColorHelper private constructor() {
     fun switchThemeColor(color: Int) {
         themeColor = color
         SharedPreferencesHelper().rxPreferences.getInteger(THEME_COLOR).set(color)
+    }
+
+    @VisibleForTesting
+    fun getThemeColorFromSP(): Int {
+        return SharedPreferencesHelper().rxPreferences.getInteger(THEME_COLOR).get()
     }
 
     companion object {

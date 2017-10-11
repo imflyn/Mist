@@ -6,6 +6,7 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.widget.FrameLayout
 import flyn.mist.R
+import flyn.mist.helper.ThemeColorHelper
 import flyn.mist.model.Music
 import flyn.mist.ui.adapter.LeftMenuAdapter
 import flyn.mist.ui.presenter.CurrentMusicPresenter
@@ -36,6 +37,7 @@ class LeftMenuFragment : BaseFragment(), ICurrentMusicView {
         recycleView.layoutManager = LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false)
         menuAdapter = LeftMenuAdapter(recycleView)
         recycleView.adapter = menuAdapter
+
     }
 
     override fun setListener() {
@@ -66,7 +68,7 @@ class LeftMenuFragment : BaseFragment(), ICurrentMusicView {
         val layoutParams = rl_background.layoutParams as FrameLayout.LayoutParams
         layoutParams.height = ViewUtils.getDeviceWidth() * 9 / 16
         rl_background.layoutParams = layoutParams
-        rl_background.setBackgroundResource(R.color.colorAccent)
+        rl_background.setBackgroundColor(ThemeColorHelper.getInstance().themeColor)
         recycleView.setBackgroundResource(android.R.color.white)
         tv_back_title.typeface = Typeface.createFromAsset(activity.assets, "fonts/GistRough.otf")
         tv_back_title.setText(R.string.app_name)
