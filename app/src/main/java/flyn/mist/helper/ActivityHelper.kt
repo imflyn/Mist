@@ -90,17 +90,14 @@ class ActivityHelper private constructor() {
 
 
     companion object {
-        @Volatile
-        var instance: ActivityHelper? = null
-            get() {
-                if (field == null) {
-                    synchronized(ActivityHelper::class.java) {
-                        if (field == null)
-                            field = ActivityHelper()
-                    }
-                }
-                return field
-            }
+        fun getInstance(): ActivityHelper {
+            return Inner.instance
+        }
+
+        private object Inner {
+            val instance = ActivityHelper()
+        }
     }
+
 
 }

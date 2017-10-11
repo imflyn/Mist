@@ -23,7 +23,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ActivityHelper.instance?.addActivity(this)
+        ActivityHelper.getInstance().addActivity(this)
         mContext = this
         uiHelper = UIHelper.attachToActivity(this)
         mInflater = LayoutInflater.from(this)
@@ -49,7 +49,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        ActivityHelper.instance?.setCurrentActivity(this)
+        ActivityHelper.getInstance().setCurrentActivity(this)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -64,6 +64,6 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         uiHelper.destroy()
-        ActivityHelper.instance?.removeActivity(this)
+        ActivityHelper.getInstance().removeActivity(this)
     }
 }
