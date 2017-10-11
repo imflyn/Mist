@@ -3,6 +3,9 @@ package flyn.mist.util
 import android.app.Activity
 import android.content.Context
 import android.graphics.Point
+import android.graphics.drawable.Drawable
+import android.support.v4.content.ContextCompat
+import android.support.v4.graphics.drawable.DrawableCompat
 import android.util.SparseArray
 import android.util.TypedValue
 import android.view.View
@@ -69,4 +72,9 @@ object ViewUtils {
         return size.y
     }
 
+    fun tintDrawable(drawableRes: Int, color: Int): Drawable {
+        val wrapDrawable = DrawableCompat.wrap(ContextCompat.getDrawable(MistApplication.appContext, drawableRes)).mutate()
+        DrawableCompat.setTint(wrapDrawable, color)
+        return wrapDrawable
+    }
 }

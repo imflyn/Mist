@@ -4,11 +4,13 @@ import android.graphics.Typeface
 import android.support.v4.view.GravityCompat
 import android.view.View
 import flyn.mist.R
+import flyn.mist.helper.ThemeColorHelper
 import flyn.mist.helper.statusbar.Eyes
+import flyn.mist.util.ViewUtils
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity(), View.OnClickListener {
 
 
     override fun getLayoutId(): Int {
@@ -22,19 +24,38 @@ class MainActivity : BaseActivity() {
 
         tv_title.typeface = Typeface.createFromAsset(assets, "fonts/GistRough.otf")
 
+
+        tv_title.setTextColor(ThemeColorHelper.getInstance().themeColor)
+        ibtn_menu.setImageDrawable(ViewUtils.tintDrawable(R.drawable.ic_menu, ThemeColorHelper.getInstance().themeColor))
+        ibtn_search.setImageDrawable(ViewUtils.tintDrawable(R.drawable.ic_search, ThemeColorHelper.getInstance().themeColor))
     }
 
     override fun setListener() {
-        ibtn_menu.setOnClickListener {
-            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                drawerLayout.closeDrawers()
-            } else {
-                drawerLayout.openDrawer(GravityCompat.START)
-            }
-        }
+        ibtn_menu.setOnClickListener(this)
+        ibtn_search.setOnClickListener(this)
     }
 
     override fun initData() {
 
     }
+
+    override fun onBackPressed() {
+        moveTaskToBack(true)
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.ibtn_menu -> {
+                if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.closeDrawers()
+                } else {
+                    drawerLayout.openDrawer(GravityCompat.START)
+                }
+            }
+            R.id.ibtn_search -> {
+
+            }
+        }
+    }
+
 }

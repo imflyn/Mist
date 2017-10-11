@@ -71,5 +71,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.1.1'
     //https://github.com/andkulikov/Transitions-Everywhere
     implementation "com.andkulikov:transitionseverywhere:1.7.6"
+    //https://github.com/f2prateek/rx-preferences
+    compile 'com.f2prateek.rx.preferences2:rx-preferences:2.0.0-RC3'
 }
 
