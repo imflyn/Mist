@@ -1,6 +1,5 @@
 package flyn.mist.ui.activity
 
-import android.graphics.Typeface
 import android.support.v4.content.ContextCompat
 import android.support.v4.view.GravityCompat
 import android.view.View
@@ -22,9 +21,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         supportActionBar?.setDisplayShowTitleEnabled(false)
         Eyes.translucentStatusBar(mContext, true)
         window.decorView.systemUiVisibility = window.decorView.systemUiVisibility or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-
-        tv_title.typeface = Typeface.createFromAsset(assets, "fonts/GistRough.otf")
-
 
         tv_title.setTextColor(ContextCompat.getColor(mContext, ThemeColorHelper.getInstance().themeColor))
         ibtn_menu.setImageDrawable(ViewUtils.tintDrawable(R.drawable.ic_menu, ThemeColorHelper.getInstance().themeColor))

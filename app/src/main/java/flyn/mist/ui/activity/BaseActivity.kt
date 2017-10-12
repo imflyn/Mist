@@ -1,6 +1,7 @@
 package flyn.mist.ui.activity
 
 import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
@@ -11,6 +12,7 @@ import flyn.mist.MistApplication
 import flyn.mist.helper.ActivityHelper
 import flyn.mist.helper.UIHelper
 import kotlinx.android.synthetic.main.activity_main.*
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
 
 abstract class BaseActivity : AppCompatActivity() {
@@ -20,6 +22,9 @@ abstract class BaseActivity : AppCompatActivity() {
     lateinit var mInflater: LayoutInflater
     lateinit var mHandler: Handler
 
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

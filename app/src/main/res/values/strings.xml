@@ -9,5 +9,12 @@
     <string name="feedback">反馈</string>
     <string name="about">关于</string>
 
+    <!-- 主页 -->
+    <string name="local_music">本地音乐</string>
+    <string name="recently_play">最近播放</string>
+    <string name="recently_add">最近添加</string>
+    <string name="my_playlist">我的歌单</string>
+    <string name="my_fav">我喜欢</string>
+
 
 </resources>

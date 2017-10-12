@@ -7,6 +7,7 @@ import android.os.Looper
 import android.support.multidex.MultiDex
 import com.bumptech.glide.Glide
 import com.bumptech.glide.MemoryCategory
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig
 
 
 class MistApplication : Application() {
@@ -26,7 +27,10 @@ class MistApplication : Application() {
         super.onCreate()
         appContext = this
         Glide.get(this).setMemoryCategory(MemoryCategory.HIGH)
-
+        CalligraphyConfig.initDefault(CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/Roboto-Thin.ttf")
+                .setFontAttrId(R.attr.fontPath)
+                .build())
     }
 
 
@@ -41,7 +45,7 @@ class MistApplication : Application() {
     }
 
     override fun attachBaseContext(base: Context) {
-        super.attachBaseContext(base)
+        super.attachBaseContext(base);
         MultiDex.install(this)
     }
 
