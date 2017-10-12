@@ -1,6 +1,7 @@
 package flyn.mist.ui.activity
 
 import android.graphics.Typeface
+import android.support.v4.content.ContextCompat
 import android.support.v4.view.GravityCompat
 import android.view.View
 import flyn.mist.R
@@ -25,7 +26,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         tv_title.typeface = Typeface.createFromAsset(assets, "fonts/GistRough.otf")
 
 
-        tv_title.setTextColor(ThemeColorHelper.getInstance().themeColor)
+        tv_title.setTextColor(ContextCompat.getColor(mContext, ThemeColorHelper.getInstance().themeColor))
         ibtn_menu.setImageDrawable(ViewUtils.tintDrawable(R.drawable.ic_menu, ThemeColorHelper.getInstance().themeColor))
         ibtn_search.setImageDrawable(ViewUtils.tintDrawable(R.drawable.ic_search, ThemeColorHelper.getInstance().themeColor))
     }

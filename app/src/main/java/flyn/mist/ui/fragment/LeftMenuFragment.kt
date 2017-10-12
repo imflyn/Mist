@@ -68,7 +68,7 @@ class LeftMenuFragment : BaseFragment(), ICurrentMusicView {
         val layoutParams = rl_background.layoutParams as FrameLayout.LayoutParams
         layoutParams.height = ViewUtils.getDeviceWidth() * 9 / 16
         rl_background.layoutParams = layoutParams
-        rl_background.setBackgroundColor(ThemeColorHelper.getInstance().themeColor)
+        rl_background.setBackgroundColor(ContextCompat.getColor(mContext, ThemeColorHelper.getInstance().themeColor))
         recycleView.setBackgroundResource(android.R.color.white)
         tv_back_title.typeface = Typeface.createFromAsset(activity.assets, "fonts/GistRough.otf")
         tv_back_title.setText(R.string.app_name)

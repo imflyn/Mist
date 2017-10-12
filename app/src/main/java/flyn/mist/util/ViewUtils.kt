@@ -74,7 +74,7 @@ object ViewUtils {
 
     fun tintDrawable(drawableRes: Int, color: Int): Drawable {
         val wrapDrawable = DrawableCompat.wrap(ContextCompat.getDrawable(MistApplication.appContext, drawableRes)).mutate()
-        DrawableCompat.setTint(wrapDrawable, color)
+        DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(MistApplication.appContext, color))
         return wrapDrawable
     }
 }

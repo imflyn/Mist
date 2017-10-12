@@ -1,5 +1,6 @@
 package flyn.mist.ui.adapter
 
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
@@ -33,7 +34,7 @@ class LeftMenuAdapter(mRecyclerView: RecyclerView?) : BaseListAdapter<String>(mR
             }
         }
         itemHolder.iv_icon.setImageDrawable(ViewUtils.tintDrawable(res, ThemeColorHelper.getInstance().themeColor))
-        itemHolder.tv_text.setTextColor(ThemeColorHelper.getInstance().themeColor)
+        itemHolder.tv_text.setTextColor(ContextCompat.getColor(mContext, ThemeColorHelper.getInstance().themeColor))
         itemHolder.tv_text.text = getItem(position)
     }
 

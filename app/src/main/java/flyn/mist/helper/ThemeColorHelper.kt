@@ -1,8 +1,6 @@
 package flyn.mist.helper
 
 import android.support.annotation.VisibleForTesting
-import android.support.v4.content.ContextCompat
-import flyn.mist.MistApplication
 import flyn.mist.R
 
 class ThemeColorHelper private constructor() {
@@ -11,13 +9,13 @@ class ThemeColorHelper private constructor() {
     var themeColor: Int = 0
 
     init {
-        themeColor = ContextCompat.getColor(MistApplication.appContext, R.color.colorAccent)
+        themeColor = R.color.colorAccent
         SharedPreferencesHelper().rxPreferences.getInteger(THEME_COLOR)
                 .asObservable()
                 .subscribe({ color ->
-                    themeColor = color
+                    themeColor = if (color <= 0) R.color.colorAccent else color
                 }, {
-                    themeColor = ContextCompat.getColor(MistApplication.appContext, R.color.colorAccent)
+                    themeColor = R.color.colorAccent
                 })
     }
 
