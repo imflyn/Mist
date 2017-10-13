@@ -21,10 +21,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         supportActionBar?.setDisplayShowTitleEnabled(false)
         Eyes.translucentStatusBar(mContext, true)
         window.decorView.systemUiVisibility = window.decorView.systemUiVisibility or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+    }
 
+    override fun themeSettings() {
         tv_title.setTextColor(ContextCompat.getColor(mContext, ThemeColorHelper.getInstance().themeColor))
         ibtn_menu.setImageDrawable(ViewUtils.tintDrawable(R.drawable.ic_menu, ThemeColorHelper.getInstance().themeColor))
         ibtn_search.setImageDrawable(ViewUtils.tintDrawable(R.drawable.ic_search, ThemeColorHelper.getInstance().themeColor))
+
     }
 
     override fun setListener() {

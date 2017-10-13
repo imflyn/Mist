@@ -11,4 +11,5 @@
     <color name="textColorSecondaryLight">#999999</color>
     <color name="dividerColor">#E1E1E1</color>
     <color name="bg_gray">#FAFAFA</color>
+    <color name="transparent_black">#CC333333</color>
 </resources>

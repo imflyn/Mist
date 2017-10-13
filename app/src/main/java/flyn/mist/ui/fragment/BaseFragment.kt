@@ -30,6 +30,7 @@ abstract class BaseFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView(savedInstanceState)
+        themeSettings()
         setListener()
         initData()
     }
@@ -46,6 +47,8 @@ abstract class BaseFragment : Fragment() {
     abstract fun getLayoutId(): Int
 
     abstract fun initView(savedInstanceState: Bundle?)
+
+    abstract fun themeSettings()
 
     abstract fun setListener()
 

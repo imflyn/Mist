@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemView"
+    android:layout_width="match_parent"
+    android:layout_height="75dip"
+    android:background="?selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/iv_songlist"
+        android:layout_width="52dip"
+        android:layout_height="52dip"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dip"
+        android:scaleType="center"
+        tools:background="@color/transparent_black"
+        tools:src="@drawable/ic_album" />
+
+    <ImageView
+        android:id="@+id/iv_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dip"
+        android:background="?selectableItemBackgroundBorderless"
+        android:padding="4dip"
+        android:scaleType="center"
+        tools:src="@drawable/ic_three_point" />
+
+    <TextView
+        android:id="@+id/tv_songlist_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/iv_songlist"
+        android:layout_marginRight="8dip"
+        android:layout_marginStart="16dip"
+        android:layout_marginTop="6dip"
+        android:layout_toEndOf="@id/iv_songlist"
+        android:layout_toStartOf="@id/iv_more"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="16sp"
+        tools:text="我喜欢我喜欢我喜欢我喜欢我喜欢我喜欢我喜欢我喜欢我喜欢我喜欢我喜欢我喜欢我喜欢我喜欢我喜欢我喜欢我喜欢我喜欢我喜欢我喜欢" />
+
+    <TextView
+        android:id="@+id/tv_song_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/iv_songlist"
+        android:layout_marginBottom="6dip"
+        android:layout_marginStart="16dip"
+        android:layout_toEndOf="@id/iv_songlist"
+        android:textColor="@color/textColorSecondary"
+        android:textSize="12sp"
+        tools:text="10首" />
+
+
+    <include
+        layout="@layout/view_divider_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="84dip" />
+</RelativeLayout>

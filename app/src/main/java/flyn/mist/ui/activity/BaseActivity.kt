@@ -40,6 +40,7 @@ abstract class BaseActivity : AppCompatActivity() {
             setSupportActionBar(toolbar)
         }
         initView()
+        themeSettings()
         setListener()
         initData()
     }
@@ -47,6 +48,8 @@ abstract class BaseActivity : AppCompatActivity() {
     abstract fun getLayoutId(): Int
 
     abstract fun initView()
+
+    abstract fun themeSettings()
 
     abstract fun setListener()
 

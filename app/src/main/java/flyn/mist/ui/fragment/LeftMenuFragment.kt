@@ -37,7 +37,9 @@ class LeftMenuFragment : BaseFragment(), ICurrentMusicView {
         recycleView.layoutManager = LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false)
         menuAdapter = LeftMenuAdapter(recycleView)
         recycleView.adapter = menuAdapter
+    }
 
+    override fun themeSettings() {
     }
 
     override fun setListener() {

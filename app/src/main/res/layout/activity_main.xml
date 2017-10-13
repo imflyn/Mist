@@ -30,7 +30,7 @@
                 android:layout_gravity="center|start"
                 android:background="?selectableItemBackgroundBorderless"
                 android:padding="4dip"
-                android:src="@drawable/ic_menu" />
+                tools:src="@drawable/ic_menu" />
 
             <TextView
                 android:id="@+id/tv_title"
@@ -52,7 +52,7 @@
                 android:layout_marginEnd="8dip"
                 android:background="?selectableItemBackgroundBorderless"
                 android:padding="4dip"
-                android:src="@drawable/ic_search" />
+                tools:src="@drawable/ic_search" />
         </android.support.v7.widget.Toolbar>
 
         <RelativeLayout
