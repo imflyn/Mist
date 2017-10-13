@@ -1,7 +1,7 @@
 package flyn.mist.ui.presenter
 
 import flyn.mist.model.Music
-import flyn.mist.service.MusicService
+import flyn.mist.service.PlayMusicService
 import flyn.mist.ui.view.ICurrentMusicView
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -14,7 +14,7 @@ class CurrentMusicPresenter(iView: ICurrentMusicView) : IPresenter<ICurrentMusic
     fun getCurrentMusic() {
         disposable.add(
                 Observable.create<Music> { source ->
-                    val music = MusicService.getInstance().getCurrentMusic()
+                    val music = PlayMusicService.getInstance().getCurrentMusic()
                     if (music == null) {
                         source.onError(IllegalStateException("No current music "))
                     } else {

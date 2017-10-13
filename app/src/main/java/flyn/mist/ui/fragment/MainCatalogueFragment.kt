@@ -54,7 +54,7 @@ class MainCatalogueFragment : BaseFragment(), View.OnClickListener, ISongListVie
         tv_recently_add_num.text = "(" + 0 + ")"
         tv_created_playlist.text = getString(R.string.created_playlist, 0)
 
-        songListPresenter.getSongList()
+        mHandler.postDelayed({ songListPresenter.getSongList() }, 0)
     }
 
     override fun onDestroy() {

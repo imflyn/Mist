@@ -2,19 +2,19 @@ package flyn.mist.service
 
 import flyn.mist.model.Music
 
-class MusicService private constructor() {
+class PlayMusicService private constructor() {
 
     fun getCurrentMusic(): Music? {
         return null
     }
 
     companion object {
-        fun getInstance(): MusicService {
+        fun getInstance(): PlayMusicService {
             return Inner.instance
         }
 
         private object Inner {
-            val instance = MusicService()
+            val instance = PlayMusicService()
         }
     }
 }
